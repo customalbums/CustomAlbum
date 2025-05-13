@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CustomAlbums Submission</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="site-title">CustomAlbums</div>
+    <h2>🎵 Submit Your Custom Music Album 🎶</h2>
+    <p class="description">
+      Please fill in the box below to contact support from our administrators.<br>
+      Once done, you will receive an email from us within 24 hours.<br>
+      Please send the pictures that you want on the album to our email: <strong>customalbums.official@gmail.com</strong>
+    </p>
+
+    <form action="https://formspree.io/f/mjkwpodl" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" name="Full Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" name="Email" required>
+
+      <label for="address">Street Address</label>
+      <input type="text" name="Address" required>
+
+      <label for="postcode">Postcode</label>
+      <input type="text" name="Postcode" required>
+
+      <label for="title">Album Title</label>
+      <input type="text" name="Album Title" required>
+
+      <label for="band">Band Name</label>
+      <input type="text" name="Band Name" required>
+
+      <label for="songs">Song List (up to 20 songs)</label>
+      <textarea name="Songs" rows="10" placeholder="1. Song Title 2. Song Title, etc." required></textarea>
+
+      <button type="submit">Submit Album</button>
+    </form>
+  </div>
+</body>
+</html>
