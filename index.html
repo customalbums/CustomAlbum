@@ -3,20 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CustomAlbums Submission</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Custom Album Submission</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      padding: 30px;
+      margin: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #1f4037;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      background-color: #1f4037;
+      color: white;
+      font-weight: bold;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #14532d;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <div class="site-title">CustomAlbums</div>
-    <h2>🎵 Submit Your Custom Music Album 🎶</h2>
-    <p class="description">
-      Please fill in the box below to contact support from our administrators.<br>
-      Once done, you will receive an email from us within 24 hours.<br>
-      Please send the pictures that you want on the album to our email: <strong>customalbums.official@gmail.com</strong>
-    </p>
-
-    <form action="https://formspree.io/f/mjkwpodl" method="POST">
+    <h2>Create Your Custom Album</h2>
+    <form action="https://formspree.io/f/mjkwpodl" method="POST" enctype="multipart/form-data">
       <label for="name">Full Name</label>
       <input type="text" name="Full Name" required>
 
@@ -36,7 +74,10 @@
       <input type="text" name="Band Name" required>
 
       <label for="songs">Song List (up to 20 songs)</label>
-      <textarea name="Songs" rows="10" placeholder="1. Song Title 2. Song Title, etc." required></textarea>
+      <textarea name="Songs" rows="8" placeholder="1. ...\n2. ...\n3. ..." required></textarea>
+
+      <label for="photos">Upload Album Images (jpg, png, etc.)</label>
+      <input type="file" name="Images" accept="image/*" multiple required>
 
       <button type="submit">Submit Album</button>
     </form>
