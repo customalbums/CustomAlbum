@@ -65,11 +65,52 @@
     }
     button:hover {
       background-color: #1f3547;
+      opacity: 0.9;
     }
-    .note {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 5px;
+
+    .idea-wheel {
+      margin-top: 60px;
+      text-align: center;
+      background: #f5f9fa;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .idea-button {
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .idea-button.song {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    .idea-button.song:hover {
+      background-color: #d68910;
+    }
+
+    .idea-button.cover {
+      background-color: #8e44ad;
+      color: white;
+    }
+
+    .idea-button.cover:hover {
+      background-color: #71368a;
+    }
+
+    .idea-result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #203a43;
     }
   </style>
 </head>
@@ -107,5 +148,58 @@
       <button type="submit">Submit Album</button>
     </form>
   </div>
+
+  <!-- IDEA WHEELS SECTION -->
+  <div class="container idea-wheel">
+    <h2>🎡 Album Idea Wheels</h2>
+    <p class="description">Need inspiration? Spin the wheels below to get creative themes and cover concepts!</p>
+
+    <div>
+      <h3 style="color:#2c5364;">🎶 Song Theme Wheel</h3>
+      <button class="idea-button song" onclick="spinWheel('song')">Spin Song Wheel</button>
+      <p id="song-idea-result" class="idea-result"></p>
+    </div>
+
+    <div>
+      <h3 style="color:#2c5364;">🖼️ Album Cover Idea Wheel</h3>
+      <button class="idea-button cover" onclick="spinWheel('cover')">Spin Cover Wheel</button>
+      <p id="cover-idea-result" class="idea-result"></p>
+    </div>
+  </div>
+
+  <script>
+    const songIdeas = [
+      "Love Ballads",
+      "Ocean Vibes",
+      "Heartbreak & Healing",
+      "Night Drive",
+      "Acoustic Chill",
+      "Future Beats",
+      "Dancefloor Magic",
+      "Rainy Day Reflections",
+      "Desert Rock",
+      "Urban Stories"
+    ];
+
+    const coverIdeas = [
+      "Retro Neon Lights",
+      "Abstract Shapes",
+      "Polaroid Collage",
+      "Nature & Mountains",
+      "Vinyl Record Style",
+      "Graffiti Street Art",
+      "Minimalist Line Art",
+      "Black and White Portrait",
+      "Vintage 70s Look",
+      "Cartoon/Illustration Vibe"
+    ];
+
+    function spinWheel(type) {
+      const ideas = type === 'song' ? songIdeas : coverIdeas;
+      const resultId = type === 'song' ? "song-idea-result" : "cover-idea-result";
+      const randomIndex = Math.floor(Math.random() * ideas.length);
+      document.getElementById(resultId).textContent = `💡 Idea: "${ideas[randomIndex]}"`;
+    }
+  </script>
 </body>
-</html>"
+</html>
